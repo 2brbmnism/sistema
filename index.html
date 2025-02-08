@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acesso Restrito</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .login-container button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>Acesso Restrito</h2>
+        <p>Por favor, insira suas credenciais para acessar:</p>
+        <input type="text" id="idFuncional" placeholder="ID Funcional" maxlength="7">
+        <input type="password" id="password" placeholder="Senha">
+        <button onclick="checkCredentials()">Acessar</button>
+        <p id="errorMessage" class="error-message"></p>
+    </div>
+
+    <script>
+        function checkCredentials() {
+            // Obtém os valores dos campos
+            const idFuncional = document.getElementById("idFuncional").value;
+            const userPassword = document.getElementById("password").value;
+
+            // Senha correta (substitua pela senha desejada)
+            const correctPassword = "nism2brbm";
+
+            // Verifica se o ID Funcional tem exatamente 7 dígitos numéricos
+            const idFuncionalRegex = /^\d{7}$/;
+            if (!idFuncionalRegex.test(idFuncional)) {
+                document.getElementById("errorMessage").textContent = "ID Funcional não cadastrada.";
+                return; // Impede o prosseguimento
+            }
+
+            // Verifica se a senha está correta
+            if (userPassword === correctPassword) {
+                // Redireciona para a página principal
+                window.location.href = "https://2brbmnism.github.io/suspeitos/";
+            } else {
+                // Exibe uma mensagem de erro
+                document.getElementById("errorMessage").textContent = "Senha incorreta. Tente novamente.";
+            }
+        }
+    </script>
+</body>
+</html>
