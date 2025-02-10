@@ -51,7 +51,7 @@
 <body>
     <div class="login-container">
         <h2>Acesso Restrito</h2>
-        <p>Por favor, insira suas credenciais para acessar:</p>
+        <p>Por favor, insira suas credenciais:</p>
         <input type="text" id="idFuncional" placeholder="ID Funcional" maxlength="7">
         <input type="password" id="password" placeholder="Senha">
         <button onclick="checkCredentials()">Acessar</button>
@@ -59,25 +59,27 @@
     </div>
 
     <script>
-        function checkCredentials() {
-            const idFuncional = document.getElementById("idFuncional").value;
-            const userPassword = document.getElementById("password").value;
-            const correctPassword = "nism2brbm";
+        // Lista de IDs permitidos
+const idsPermitidos = ["3139972", "1234567", "9876543"];
 
-            const idFuncionalRegex = /^\d{7}$/;
-            if (!idFuncionalRegex.test(idFuncional)) {
-                document.getElementById("errorMessage").textContent = "ID Funcional não cadastrada.";
-                return;
-            }
+function checkCredentials() {
+    const idFuncional = document.getElementById("idFuncional").value;
+    const userPassword = document.getElementById("password").value;
+    const correctPassword = "nism2brbm";
 
-            if (userPassword === correctPassword) {
-                // Define autenticação na localStorage
-                localStorage.setItem("usuarioAutenticado", "true");
-                window.location.href = "https://2brbmnism.github.io/sistema/dados";
-            } else {
-                document.getElementById("errorMessage").textContent = "Senha incorreta. Tente novamente.";
-            }
-        }
+    // Verifica se o ID Funcional está na lista permitida
+    if (!idsPermitidos.includes(idFuncional)) {
+        document.getElementById("errorMessage").textContent = "ID Funcional não autorizado.";
+        return;
+    }
+
+    if (userPassword === correctPassword) {
+        localStorage.setItem("usuarioAutenticado", "true");
+        window.location.href = "https://2brbmnism.github.io/suspeitos/";
+    } else {
+        document.getElementById("errorMessage").textContent = "Senha incorreta. Tente novamente.";
+    }
+}
     </script>
 </body>
 </html>
