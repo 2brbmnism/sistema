@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Veículos e Pessoas Suspeitas</title>
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.2/css/buttons.dataTables.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/responsive/2.2.5/css/responsive.dataTables.min.css">
+    <!-- jQuery -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <!-- DataTables JS -->
+    <script type="text/javascript" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/dataTables.buttons.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
+    <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+    <!-- Removida a inclusão do arquivo JSON do idioma -->
+</head>
+<body>
+    <h1>Veículos Suspeitos</h1>
+    <table id="veiculosTable" class="display nowrap" style="width:100%">
+        <thead>
+            <tr>
+                <th>Placa</th>
+                <th>Modelo</th>
+                <th>Cor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>TESTE</td><td>TESTE2</td><td>BRANCO</td></tr>
+            <tr><td>IDU3G78</td><td>FIAT UNO</td><td>BRANCO</td></tr>
+            <tr><td>IEH3758</td><td>PARATI</td><td>VERMELHA</td></tr>
+            <tr><td>IQV2J05</td><td>CG 125</td><td>VERMELHA</td></tr>
+            <tr><td>IPF5I90</td><td>GOLF</td><td>BRANCO</td></tr>
+            <tr><td>FAJ9H22</td><td>DUSTER</td><td>PRETA</td></tr>
+            <tr><td>IKW1J53</td><td>GOL</td><td>BRANCO</td></tr>
+            <tr><td>QDF5E00</td><td>CIVIC</td><td>PRATA</td></tr>
+            <tr><td>EEW8E85</td><td>FUSION</td><td>PRETO</td></tr>
+            <tr><td>MBZ3B83</td><td>AUDI A3</td><td>PRATA</td></tr>
+            <tr><td>IWS0290</td><td>VOYAGE</td><td>BRANCO</td></tr>
+            <tr><td>QMF4D39</td><td>FIESTA</td><td>PRATA</td></tr>
+            <tr><td>IZP6I66</td><td>HB20</td><td>BRANCO</td></tr>
+            <tr><td>IWG3243</td><td>C4</td><td>PRATA</td></tr>
+            <tr><td>IOK5B96</td><td>CLASSIC</td><td>PRETO</td></tr>
+            <tr><td>MDL6D05</td><td>PEUGEOT 307</td><td>VERMELHA</td></tr>
+            <tr><td>QMS4D19</td><td>VOYAGE</td><td>PRATA</td></tr>
+            <tr><td>QDK9I61</td><td>HB20</td><td>BRANCO</td></tr>
+            <tr><td>IJH6B88</td><td>ASTRA</td><td>VERDE</td></tr>
+            <tr><td>IWY0B80</td><td>CG 125 FAN</td><td>PRETA</td></tr>
+            <tr><td>BAM2A90</td><td>CORDOBA</td><td>PRATA</td></tr>
+            <tr><td>IXP9395</td><td>S10</td><td>BRANCA</td></tr>
+            <tr><td>SIS7G34</td><td>ONIX PLUS</td><td>CINZA</td></tr>
+            <tr><td>IYZ7G39</td><td>VIRTUS</td><td>PRATA</td></tr>
+            <tr><td>ITO5722</td><td>C4</td><td>PRETO</td></tr>
+            <tr><td>QIC4H22</td><td>PRISMA</td><td>BRANCO</td></tr>
+            <tr><td>IJH6B88</td><td>GOL</td><td>BRANCO</td></tr>
+            <tr><td>CLI6I25</td><td>PAJERO</td><td>PRATA</td></tr>
+            <tr><td>IUA5600</td><td>VOYAGE</td><td>PRATA</td></tr>
+            <tr><td>OAH1G37</td><td>DUSTER</td><td>PRETA</td></tr>
+            <tr><td>ITU6B81</td><td>SIENA</td><td>VERMELHO</td></tr>
+            <tr><td>IKZ6A74</td><td>CELTA</td><td>BRANCO</td></tr>
+            <tr><td>PWC0H60</td><td>UNO</td><td>PRATA</td></tr>
+            <tr><td>DQV0I30</td><td>FOX</td><td>PRETO</td></tr>
+            <tr><td>JMJ9E48</td><td>VECTRA</td><td>CINZA</td></tr>
+            <tr><td>AUT0H79</td><td>AMAROK</td><td>BRANCA</td></tr>
+            <tr><td>ASG2B04</td><td>MEGANE</td><td>PRETO</td></tr>
+            <tr><td>KYV1840</td><td>SIENA</td><td>PRATA</td></tr>
+            <tr><td>AZS2E79</td><td>GOLF</td><td>PRETO</td></tr>
+            <tr><td>QQG2G18</td><td>FORD KA</td><td>PRATA</td></tr>
+            <tr><td>JAO7A33</td><td>ONIX</td><td>BRANCO</td></tr>
+            <tr><td>NSG8A72</td><td>CRV</td><td>PRATA</td></tr>
+            <tr><td>MDK4334</td><td>COROLLA</td><td>PRATA</td></tr>
+            <tr><td>CRR5065</td><td>COROLLA</td><td>AZUL</td></tr>
+            <tr><td>IWT5H13</td><td>ONIX</td><td>VERMELHO</td></tr>
+            <tr><td>FLR6G35</td><td>AUDI A5</td><td>PRETO</td></tr>
+            <tr><td>ILW8435</td><td>GOL</td><td>PRETO</td></tr>
+            <tr><td>BAJ5E49</td><td>C4</td><td>PRETO</td></tr>
+            <tr><td>KRA7A28</td><td>CRUZE</td><td>PRETO</td></tr>
+            <tr><td>IRA3J80</td><td>XRE</td><td>VERMELHA</td></tr>
+            <tr><td>PWU0J67</td><td>S10</td><td>BRANCA</td></tr>
+            <tr><td>IVL3533</td><td>CB 300</td><td>PRETA</td></tr>
+            <tr><td>IOR8H46</td><td>CG 125 FAN</td><td>PRETA</td></tr>
+            <tr><td>KJP5729</td><td>POLO</td><td>PRATA</td></tr>
+            <tr><td>IXK5F88</td><td>COROLLA</td><td>VERMELHO</td></tr>
+            <tr><td>OLP8E11</td><td>UNO</td><td>PRATA</td></tr>
+            <tr><td>ILK1C42</td><td>YBR</td><td>BEGE</td></tr>
+        </tbody>
+    </table>
+    
+    <button id="btnPessoas">Pessoas Suspeitas</button>
+    
+    <div id="pessoasContainer" style="display:none;">
+        <h1>Pessoas Suspeitas</h1>
+        <table id="pessoasTable" class="display nowrap" style="width:100%">
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>RG</th>
+                    <th>Ocorrências</th>
+                    <th>OBS</th>
+                    <th>Redes Sociais</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>João Silva</td><td>12345678</td><td>Furto</td><td>Reincidente</td><td>@joaos</td></tr>
+                <tr><td>Maria Oliveira</td><td>87654321</td><td>Estelionato</td><td>Investigação em andamento</td><td>@mariao</td></tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <script>
+        $(document).ready(function() {
+            $('#veiculosTable, #pessoasTable').DataTable({
+                dom: 'Bflrtip',
+                buttons: [
+                    {
+                        extend: 'csv',
+                        text: 'Exportar CSV'
+                    },
+                    {
+                        extend: 'excel',
+                        text: 'Exportar Excel'
+                    },
+                    {
+                        extend: 'print',
+                        text: 'Imprimir'
+                    }
+                ],
+                lengthMenu: [10, 25, 50, 100],
+                pageLength: 10,
+                language: {
+                    url: "https://cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"
+                }
+            });
+            
+            $('#btnPessoas').on('click', function() {
+                $('#pessoasContainer').toggle();
+            });
+        });
+    </script>
+</body>
+</html>
