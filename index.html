@@ -75,13 +75,13 @@
             }
 
             // Verifica se a senha está correta
-            if (userPassword === correctPassword) {
-                // Redireciona para a página principal
-                window.location.href = "https://2brbmnism.github.io/suspeitos/";
-            } else {
-                // Exibe uma mensagem de erro
-                document.getElementById("errorMessage").textContent = "Senha incorreta. Tente novamente.";
-            }
+           if (userPassword === correctPassword) {
+    // Redireciona para dados.html
+    window.location.href = "dados.html";
+} else {
+    document.getElementById("errorMessage").textContent = "Senha incorreta. Tente novamente.";
+}
+
         }
     </script>
 </body>
