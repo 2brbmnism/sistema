@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -60,28 +60,23 @@
 
     <script>
         function checkCredentials() {
-            // Obtém os valores dos campos
             const idFuncional = document.getElementById("idFuncional").value;
             const userPassword = document.getElementById("password").value;
-
-            // Senha correta (substitua pela senha desejada)
             const correctPassword = "nism2brbm";
 
-            // Verifica se o ID Funcional tem exatamente 7 dígitos numéricos
             const idFuncionalRegex = /^\d{7}$/;
             if (!idFuncionalRegex.test(idFuncional)) {
                 document.getElementById("errorMessage").textContent = "ID Funcional não cadastrada.";
-                return; // Impede o prosseguimento
+                return;
             }
 
-            // Verifica se a senha está correta
-           if (userPassword === correctPassword) {
-    // Redireciona para dados.html
-    window.location.href = "dados.html";
-} else {
-    document.getElementById("errorMessage").textContent = "Senha incorreta. Tente novamente.";
-}
-
+            if (userPassword === correctPassword) {
+                // Define autenticação na localStorage
+                localStorage.setItem("usuarioAutenticado", "true");
+                window.location.href = "https://2brbmnism.github.io/suspeitos/";
+            } else {
+                document.getElementById("errorMessage").textContent = "Senha incorreta. Tente novamente.";
+            }
         }
     </script>
 </body>
