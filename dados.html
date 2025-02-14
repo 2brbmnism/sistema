@@ -14,16 +14,21 @@
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.html5.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.6.2/js/buttons.print.min.js"></script>
     <script type="text/javascript" src="https://cdn.datatables.net/responsive/2.2.5/js/dataTables.responsive.min.js"></script>
+    
     <style>
-        h1 {
-            text-align: center;
+        /* Centraliza o conteúdo das células da tabela */
+        #veiculosTable tbody td, #pessoasTable tbody td {
+            text-align: center !important; /* Centraliza horizontalmente */
+            vertical-align: middle !important; /* Centraliza verticalmente */
+        }
+
+        /* Centraliza os cabeçalhos da tabela */
+        #veiculosTable thead th, #pessoasTable thead th {
+            text-align: center !important; /* Centraliza horizontalmente */
+            vertical-align: middle !important; /* Centraliza verticalmente */
         }
     </style>
-     <style>
-        h2 {
-            text-align: center;
-        }
-    </style>
+     
     <script>
         if (localStorage.getItem("usuarioAutenticado") !== "true") {
             window.location.href = "https://2brbmnism.github.io/sistema";
@@ -44,7 +49,7 @@
     
         <tbody>
             
-            <h2><tr><td>TESTE</td><td>TESTE2</td><td>BRANCO</td><td>**</td></tr>
+            <tr><td>TESTE</td><td>TESTE2</td><td>BRANCO</td><td>**</td></tr>
             <tr><td>IDU3G78</td><td>FIAT UNO</td><td>BRANCO</td><td>53</td></tr>
             <tr><td>IEH3758</td><td>PARATI</td><td>VERMELHA</td><td>**</td></tr>
             <tr><td>IQV2J05</td><td>CG 125</td><td>VERMELHA</td><td>53</td></tr>
@@ -103,7 +108,7 @@
             <tr><td>ILK1C42</td><td>YBR</td><td>BEGE</td><td>53</td></tr>
             <tr><td>QPP2B30</td><td>Onix</td><td>Prata</td><td>53</td></tr>
             <tr><td>MCY0I42</td><td>Celta</td><td>Prata</td><td>Irmão com MP</td></tr>
-            </h2>
+            
         </tbody>
     </table>
     <button id="btnPessoas">Pessoas Suspeitas</button>
